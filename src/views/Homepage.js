@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import Header from '../components/Header';
-
 class Homepage extends React.Component {
 
 	render() {
 		return (
 			<section>
-				<Header />
 				<div className="linkbox">
 					<Link to="/films">Films</Link>
 				</div>
