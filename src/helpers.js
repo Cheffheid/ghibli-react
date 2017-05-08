@@ -4,7 +4,7 @@ export function getComponentName(object) {
 		'locations' : 'Location',
 		'people' : 'Person',
 		'species' : 'Species',
-		'vehicles' : 'Vehicles'
+		'vehicles' : 'Vehicle'
 	};
 
 	if ( ! objectComponentMap.hasOwnProperty( object ) ) {
