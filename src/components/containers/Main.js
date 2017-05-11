@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import ObjectListContainer from './ObjectListContainer';
+import ListPage from '../../views/Listpage';
 import Homepage from '../../views/Homepage';
 
 class Main extends React.Component {
@@ -11,7 +11,7 @@ class Main extends React.Component {
 			<main>
 				<Switch>
 					<Route exact path="/" component={Homepage} />
-					<Route exact path="/:objectType" component={ObjectListContainer} />
+					<Route exact path="/:objectType" component={ListPage} />
 				</Switch>
 			</main>
 		);

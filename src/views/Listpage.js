@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Film from '../objects/Film';
-import Location from '../objects/Location';
-import Person from '../objects/Person';
-import Species from '../objects/Species';
-import Vehicle from '../objects/Vehicle';
+import Film from '../components/objects/Film';
+import Location from '../components/objects/Location';
+import Person from '../components/objects/Person';
+import Species from '../components/objects/Species';
+import Vehicle from '../components/objects/Vehicle';
 
-import { getComponentName } from '../../helpers';
+import { getComponentName } from '../helpers';
 
-class ObjectListContainer extends React.Component {
+class Listpage extends React.Component {
 
 	constructor() {
 		super();
@@ -66,4 +66,4 @@ class ObjectListContainer extends React.Component {
 
 }
 
-export default ObjectListContainer;
+export default Listpage;
