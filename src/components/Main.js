@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import ListPage from '../../views/Listpage';
-import Homepage from '../../views/Homepage';
+import ListPage from '../views/Listpage';
+import Homepage from '../views/Homepage';
 
 class Main extends React.Component {
 

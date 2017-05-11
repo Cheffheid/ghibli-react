@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './presentational/Header';
-import Main from './containers/Main';
+import Main from './Main';
 
 class App extends React.Component {
 
