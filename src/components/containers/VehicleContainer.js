@@ -1,5 +1,7 @@
 import React from 'react';
 
+import api from '../../api';
+
 class VehicleContainer extends React.Component {
 
 	constructor() {
@@ -11,8 +13,7 @@ class VehicleContainer extends React.Component {
 	}
 
 	componentDidMount() {
-
-		const apiUrl = `https://ghibliapi.herokuapp.com${this.props.location.pathname}`,
+		const apiUrl = `${api.url}/vehicles`,
 			  responseData = fetch( apiUrl );
 
 		responseData.then( ( response ) => response.json() )
@@ -39,7 +40,7 @@ class VehicleContainer extends React.Component {
 		}
 	}
 
-	renderObject( key ) {
+	renderObject = ( key ) => {
 		const object = this.state.objects[key];
 
 		return object.name

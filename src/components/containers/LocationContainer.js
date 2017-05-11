@@ -1,5 +1,7 @@
 import React from 'react';
 
+import api from '../../api';
+
 class LocationContainer extends React.Component {
 
 	constructor() {
@@ -11,7 +13,7 @@ class LocationContainer extends React.Component {
 	}
 
 	componentDidMount() {
-		const apiUrl = `https://ghibliapi.herokuapp.com${this.props.location.pathname}`,
+		const apiUrl = `${api.url}/locations`,
 			  responseData = fetch( apiUrl );
 
 		responseData.then( ( response ) => response.json() )
@@ -38,7 +40,7 @@ class LocationContainer extends React.Component {
 		}
 	}
 
-	renderObject( key ) {
+	renderObject = ( key ) => {
 		const object = this.state.objects[key];
 
 		return object.name
