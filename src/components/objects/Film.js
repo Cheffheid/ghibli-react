@@ -4,9 +4,9 @@ class Film extends React.Component {
 
 	render() {
 		return (
-			<div className="film">
-				{this.props.title}
-			</div>
+			<li className="film">
+				{this.props.data.title}
+			</li>
 		)
 	}
 

@@ -14,11 +14,11 @@ class Listpage extends React.Component {
 		const pathName = this.props.location.pathname.replace( '/', '' );
 
 		switch ( getComponentName( pathName ) ) {
-			case "Film": return <div className="container"><FilmContainer /></div>
-			case "Location": return <div className="container"><LocationContainer /></div>
-			case "Person": return <div className="container"><PersonContainer /></div>
-			case "Species": return <div className="container"><SpeciesContainer /></div>
-			case "Vehicle": return <div className="container"><VehicleContainer /></div>
+			case "Film": return <section className="container"><FilmContainer /></section>
+			case "Location": return <section className="container"><LocationContainer /></section>
+			case "Person": return <section className="container"><PersonContainer /></section>
+			case "Species": return <section className="container"><SpeciesContainer /></section>
+			case "Vehicle": return <section className="container"><VehicleContainer /></section>
 		}
 
 	}

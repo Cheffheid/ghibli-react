@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Person from '../objects/Person';
+
 import api from '../../api';
 
 class PersonContainer extends React.Component {
@@ -27,15 +29,15 @@ class PersonContainer extends React.Component {
 
 		if ( objectCount > 0 ) {
 			return (
-				<section>
+				<ul>
 					{objectKeys.map( this.renderObject )}
-				</section>
+				</ul>
 			)
 		} else {
 			return (
-				<section>
+				<div>
 					Nothing here!
-				</section>
+				</div>
 			)
 		}
 	}
@@ -43,7 +45,7 @@ class PersonContainer extends React.Component {
 	renderObject = ( key ) => {
 		const object = this.state.objects[key];
 
-		return object.name
+		return <Person key={key} data={object} />
 	}
 
 }

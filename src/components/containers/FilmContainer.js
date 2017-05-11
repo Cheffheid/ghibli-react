@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Film from '../objects/Film';
+
 import api from '../../api';
 
 class FilmContainer extends React.Component {
@@ -27,15 +29,15 @@ class FilmContainer extends React.Component {
 
 		if ( objectCount > 0 ) {
 			return (
-				<section>
+				<ul>
 					{objectKeys.map( this.renderObject )}
-				</section>
+				</ul>
 			)
 		} else {
 			return (
-				<section>
+				<div>
 					Nothing here!
-				</section>
+				</div>
 			)
 		}
 	}
@@ -43,7 +45,7 @@ class FilmContainer extends React.Component {
 	renderObject = ( key ) => {
 		const object = this.state.objects[key];
 
-		return object.title
+		return <Film key={key} data={object} />
 	}
 
 }

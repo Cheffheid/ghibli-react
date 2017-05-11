@@ -4,9 +4,9 @@ class Vehicle extends React.Component {
 
 	render() {
 		return (
-			<div className="object vehicle">
-				{this.props.name}
-			</div>
+			<li className="vehicle">
+				{this.props.data.name}
+			</li>
 		)
 	}
 

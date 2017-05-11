@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Species from '../objects/Species';
+
 import api from '../../api';
 
 class SpeciesContainer extends React.Component {
@@ -27,15 +29,15 @@ class SpeciesContainer extends React.Component {
 
 		if ( objectCount > 0 ) {
 			return (
-				<section>
+				<ul>
 					{objectKeys.map( this.renderObject )}
-				</section>
+				</ul>
 			)
 		} else {
 			return (
-				<section>
+				<div>
 					Nothing here!
-				</section>
+				</div>
 			)
 		}
 	}
@@ -43,7 +45,7 @@ class SpeciesContainer extends React.Component {
 	renderObject = ( key ) => {
 		const object = this.state.objects[key];
 
-		return object.name
+		return <Species key={key} data={object} />
 	}
 
 }

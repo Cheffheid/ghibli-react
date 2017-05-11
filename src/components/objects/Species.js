@@ -4,9 +4,9 @@ class Species extends React.Component {
 
 	render() {
 		return (
-			<div className="object species">
-				{this.props.name}
-			</div>
+			<li className="species">
+				{this.props.data.name}
+			</li>
 		)
 	}
 

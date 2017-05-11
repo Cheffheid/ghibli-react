@@ -4,9 +4,9 @@ class Person extends React.Component {
 
 	render() {
 		return (
-			<div className="object person">
-				{this.props.name}
-			</div>
+			<li className="person">
+				{this.props.data.name}
+			</li>
 		)
 	}
 
