@@ -1,68 +1,27 @@
 import React from 'react';
 
-import Film from '../components/objects/Film';
-import Location from '../components/objects/Location';
-import Person from '../components/objects/Person';
-import Species from '../components/objects/Species';
-import Vehicle from '../components/objects/Vehicle';
+import FilmContainer from '../components/containers/FilmContainer';
+import LocationContainer from '../components/containers/LocationContainer';
+import PersonContainer from '../components/containers/PersonContainer';
+import SpeciesContainer from '../components/containers/SpeciesContainer';
+import VehicleContainer from '../components/containers/VehicleContainer';
 
 import { getComponentName } from '../helpers';
 
 class Listpage extends React.Component {
 
-	constructor() {
-		super();
-
-		this.state = {
-			objects: {},
-			objectComponent: ''
-		};
-	}
-
-	componentDidMount() {
-		const apiUrl = `https://ghibliapi.herokuapp.com${this.props.location.pathname}`,
-			  responseData = fetch( apiUrl );
-
-		let pathName = this.props.location.pathname.replace( '/', '' );
-
-		this.setState({ 'objectComponent': getComponentName( pathName ) });
-
-		responseData.then( ( response ) => response.json() )
-					.then( ( data ) => this.setState( { objects: data } ) )
-					.catch( ( error ) => console.error( error ) );
-	}
-
 	render() {
-		const objectKeys = Object.keys( this.state.objects ),
-			objectCount = objectKeys.length;
+		const pathName = this.props.location.pathname.replace( '/', '' );
 
-		if ( objectCount > 0 ) {
-			return (
-				<section>
-					{objectKeys.map( this.renderObject )}
-				</section>
-			)
-		} else {
-			return (
-				<section>
-					Nothing here!
-				</section>
-			)
+		switch ( getComponentName( pathName ) ) {
+			case "Film": return <div className="container"><FilmContainer /></div>
+			case "Location": return <div className="container"><LocationContainer /></div>
+			case "Person": return <div className="container"><PersonContainer /></div>
+			case "Species": return <div className="container"><SpeciesContainer /></div>
+			case "Vehicle": return <div className="container"><VehicleContainer /></div>
 		}
 
 	}
-
-	renderObject = ( key ) => {
-		const object = this.state.objects[key];
-
-		switch ( this.state.objectComponent ) {
-			case "Film": return <div key={key} className="object"><Film {...object} key={key} /></div>
-			case "Location": return <div key={key} className="object"><Location {...object} /></div>
-			case "Person": return <div key={key} className="object"><Person {...object} /></div>
-			case "Species": return <div key={key} className="object"><Species {...object} /></div>
-			case "Vehicle": return <div key={key} className="object"><Vehicle {...object} /></div>
-		}
-	};
 
 }
 
