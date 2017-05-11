@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from './Navigation';
 
 class Header extends React.Component {
 
@@ -6,6 +7,7 @@ class Header extends React.Component {
 		return (
 			<header>
 				<h1>Ghibli Browser</h1>
+				<Navigation />
 			</header>
 		)
 	}
