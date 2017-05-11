@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './presentational/Header';
+import Main from './containers/Main';
 
 class App extends React.Component {
 
@@ -8,11 +9,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<Header />
-
-				<main className="main">
-					{this.props.children}
-				</main>
-
+				<Main />
 			</div>
 		);
 	}

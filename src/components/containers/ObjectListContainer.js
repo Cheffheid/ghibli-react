@@ -19,7 +19,7 @@ class ObjectListContainer extends React.Component {
 		};
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		const apiUrl = `https://ghibliapi.herokuapp.com${this.props.location.pathname}`,
 			  responseData = fetch( apiUrl );
 
