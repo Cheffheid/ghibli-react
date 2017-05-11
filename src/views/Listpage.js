@@ -6,6 +6,8 @@ import PersonContainer from '../components/containers/PersonContainer';
 import SpeciesContainer from '../components/containers/SpeciesContainer';
 import VehicleContainer from '../components/containers/VehicleContainer';
 
+import NotFound from './NotFound';
+
 import { getComponentName } from '../helpers';
 
 class Listpage extends React.Component {
@@ -21,7 +23,6 @@ class Listpage extends React.Component {
 						<FilmContainer />
 					</section>
 				);
-				break;
 			case "Location": 
 				return ( 
 					<section className="container">
@@ -29,7 +30,6 @@ class Listpage extends React.Component {
 						<LocationContainer />
 					</section>
 				);
-				break;
 			case "Person": 
 				return ( 
 					<section className="container">
@@ -37,7 +37,6 @@ class Listpage extends React.Component {
 						<PersonContainer />
 					</section>
 				);
-				break;
 			case "Species": 
 				return ( 
 					<section className="container">
@@ -45,7 +44,6 @@ class Listpage extends React.Component {
 						<SpeciesContainer />
 					</section>
 				);
-				break;
 			case "Vehicle": 
 				return ( 
 					<section className="container">
@@ -53,7 +51,12 @@ class Listpage extends React.Component {
 						<VehicleContainer />
 					</section>
 				);
-				break;
+			default:
+				return (
+					<section className="container">
+						<NotFound />
+					</section>
+				);
 		}
 
 	}
