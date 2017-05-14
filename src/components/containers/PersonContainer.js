@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Person from '../objects/Person';
+import Person from '../cards/Person';
 
 import api from '../../api';
 

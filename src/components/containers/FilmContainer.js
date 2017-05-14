@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Film from '../objects/Film';
+import Film from '../cards/Film';
 
 import api from '../../api';
 

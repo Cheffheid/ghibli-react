@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Location from '../objects/Location';
+import Location from '../cards/Location';
 
 import api from '../../api';
 

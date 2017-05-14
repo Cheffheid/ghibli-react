@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Species from '../objects/Species';
+import Species from '../cards/Species';
 
 import api from '../../api';
 

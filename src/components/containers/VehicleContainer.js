@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Vehicle from '../objects/Vehicle';
+import Vehicle from '../cards/Vehicle';
 
 import api from '../../api';
 
